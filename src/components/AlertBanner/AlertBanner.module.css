@@ -1,0 +1,12 @@
+.container-alert {
+  background-color: var(--main-color);
+  text-align: center;
+}
+
+.title-alert {
+  font-family: "VL NewParis Headline";
+  font-size: 1.2rem;
+  color: var(--white-color);
+  padding-top: 1.4rem;
+  padding-bottom: 1.1rem;
+}
