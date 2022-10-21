@@ -1,0 +1,49 @@
+.nav {
+  transition: all 0.3s ease-in;
+}
+
+.logo {
+    width: 12.2rem;
+    height: 2.2rem;
+}
+
+.nav ul {
+  display: none;
+}
+
+.nav-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  padding: 4.8rem;
+}
+
+.nav-mobile ul {
+  margin-top: 4.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 1.2rem;
+}
+
+.nav-mobile li a {
+  font-size: 3.2rem;
+  border-bottom: 1px solid var(--gray-1);
+  padding-bottom: 1.2rem;
+  width: 100%;
+}
+
+.nav-mobile button {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}
+
+.hidden {
+  display: none;
+}
+

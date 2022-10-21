@@ -1,0 +1,30 @@
+.container-search {
+  margin-top: 1.2rem;
+  position: relative;
+  text-align: center;
+}
+
+.input-nav__serach {
+  border: none;
+  border-bottom: 1px solid var(--gray-1);
+  width: 100%;
+  text-align: center;
+  outline: none;
+  padding: 0.4rem;
+  font-size: 1.8rem;
+}
+
+.input-nav__serach:focus {
+  border-bottom: 1px solid var(--main-color);
+}
+
+.container-search label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-90%, -50%);
+}
+
+.hidden {
+    display: none;
+}

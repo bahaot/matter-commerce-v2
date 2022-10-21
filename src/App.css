@@ -1,38 +1,50 @@
-.App {
-  text-align: center;
+/* here you will find the main rules for the whole app */
+/*! this file styles will be applied on every element  */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap");
+/* font-family: 'Montserrat', sans-serif; */
+
+/* font-family: 'VL NewParis Headline', sans-serif; */
+
+@font-face {
+  font-family: "VL NewParis Headline";
+  src: url("./fonts/VL_NewParis\ Headline\ Regular.otf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --main-color: #33333a;
+  --white-color: #fff;
+  --gray-1: #dedede;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+html {
+  font-size: 62.5%;
 }
 
-.App-link {
-  color: #61dafb;
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--main-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  display: inline-block;
+  background: none;
+  border: none;
+}
+
+ul {
+  list-style: none;
 }
