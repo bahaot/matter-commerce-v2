@@ -39,6 +39,10 @@ a:active {
   color: var(--main-color);
 }
 
+span {
+  display: inline-block;
+}
+
 button {
   display: inline-block;
   background: none;

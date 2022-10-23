@@ -2,7 +2,22 @@
   display: none;
 }
 
-ul {
+.list-right {
     display: flex;
     gap: 1.2rem;
+    align-items: center;
+}
+
+.list-right li a {
+  font-size: 1.4rem;
+}
+
+@media (min-width: 1024px) {
+  .hidden {
+    display: inline-block;
+  }
+
+  .list-right {
+    gap: 2.4rem;
+  }
 }

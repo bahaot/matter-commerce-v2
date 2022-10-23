@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 import Container from "../../UI/Container/Container";
-import NavLeft from "./NavLeft/NavLeft";
 
-import styles from "./Header.module.css";
+import NavLeft from "./NavLeft/NavLeft";
 import NavRight from "./NavRight/NavRight";
 import SearchBar from "./NavLeft/SearchBar/SearchBar";
+
+
+import styles from "./Header.module.css";
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -25,7 +27,7 @@ const Header = () => {
         </button>
         <NavLeft isNavOpen={navOpen} onOpenNav={handleNavOpen} />
 
-        <NavRight />
+        <NavRight isNavOpen={navOpen}/>
       </Container>
 
       <SearchBar />

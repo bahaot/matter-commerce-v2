@@ -1,6 +1,7 @@
 import React from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 
 import styles from "./NavLeft.module.css";
 
@@ -14,7 +15,7 @@ const NavLeft = ({ isNavOpen, onOpenNav }) => {
         {navContent.map((c) => {
           return (
             <li key={c}>
-              <a href="#">{c}</a>
+              <a href="#">{c} <span><KeyboardArrowDownOutlinedIcon /></span></a>
             </li>
           );
         })}

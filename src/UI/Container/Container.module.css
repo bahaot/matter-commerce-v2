@@ -3,3 +3,15 @@
   margin: 0 auto;
   padding: 0 2.4rem;
 }
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 4.8rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding: 0 15rem;
+  }
+}
