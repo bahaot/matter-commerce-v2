@@ -1,0 +1,23 @@
+.modal-details__header {
+  border-bottom: 1px solid #f9f8f6;
+  padding-bottom: 1.2rem;
+}
+
+.modal-header__title {
+  font-size: 2.4rem;
+  line-height: 1.25;
+  color: var(--text-modal);
+  margin-bottom: 1.2rem;
+}
+
+.modal-header__details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header__price {
+  font-family: "Montserrat", sans-serif;
+  color: var(--label-color);
+  font-size: 2.4rem;
+}

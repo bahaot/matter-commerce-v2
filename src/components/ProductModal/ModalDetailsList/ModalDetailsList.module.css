@@ -1,0 +1,24 @@
+.modal-details__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2.4rem;
+}
+
+.modal-list__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f9f8f6;
+  padding-bottom: 1.2rem;
+}
+
+.modal-details__list .modal-product__subHeading {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.modal-list__data {
+  color: #666666;
+  font-size: 1.6rem;
+}

@@ -12,8 +12,11 @@
 
 :root {
   --main-color: #33333a;
+  --text-modal: #030303;
+  --label-color: #ff6008;
   --white-color: #fff;
   --gray-1: #dedede;
+  --gray-2: #d8d8d8;
 }
 
 *,

@@ -1,7 +1,9 @@
 import React from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
-import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
+import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+
+import Logo from "../../../UI/Logo/Logo";
 
 import styles from "./NavLeft.module.css";
 
@@ -10,12 +12,17 @@ const NavLeft = ({ isNavOpen, onOpenNav }) => {
 
   return (
     <nav className={`${styles.nav} ${isNavOpen ? styles["nav-mobile"] : ""}`}>
-      <img src="./images/logo.jpg" className={styles.logo}/>
+      <Logo />
       <ul>
         {navContent.map((c) => {
           return (
             <li key={c}>
-              <a href="#">{c} <span><KeyboardArrowDownOutlinedIcon /></span></a>
+              <a href="#">
+                {c}{" "}
+                <span>
+                  <KeyboardArrowDownOutlinedIcon />
+                </span>
+              </a>
             </li>
           );
         })}

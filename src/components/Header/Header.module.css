@@ -1,3 +1,8 @@
+header {
+  height: 8rem;
+  margin: 1.2rem 0;
+}
+
 .container-nav {
   display: flex;
   justify-content: space-between;
@@ -5,12 +10,19 @@
 }
 
 header a {
-  font-family: 'Montserrat', sans-serif;
-
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (min-width: 1024px) {
   .btn-nav__open {
     display: none;
+  }
+
+  header {
+    margin: 0 0;
+  }
+
+  .container-nav {
+    height: 100%;
   }
 }

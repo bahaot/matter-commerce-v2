@@ -1,0 +1,5 @@
+.subheading {
+  font-family: "Montserrat", sans-serif;
+  color: var(--main-color);
+  /* you have to set the font size  */
+}

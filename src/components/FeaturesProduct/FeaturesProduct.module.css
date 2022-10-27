@@ -1,0 +1,28 @@
+.contianer-products__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4.8rem;
+  column-gap: 2.4rem;
+}
+
+section {
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .product-description__box {
+    text-align: left;
+  }
+}
+
+@media (min-width: 768px) {
+  .contianer-products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .contianer-products__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,19 @@
+.btn-product {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  font-family: "Montserrat", sans-serif;
+  width: 18rem;
+  height: 5rem;
+  padding: 1.5rem 2rem;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--main-color);
+  color: #fff;
+
+  cursor: pointer;
+  transition: all 0.3s;
+}

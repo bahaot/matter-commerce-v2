@@ -1,0 +1,12 @@
+.product-img__box {
+  width: 100%;
+  height: 39rem;
+  margin-bottom: 1.2rem;
+}
+
+.product-img__box img {
+  height: 39rem;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

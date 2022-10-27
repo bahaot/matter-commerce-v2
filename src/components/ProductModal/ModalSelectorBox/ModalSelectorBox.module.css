@@ -1,0 +1,27 @@
+input:where([type="radio"]) {
+  border: none;
+  opacity: 0;
+}
+
+.modal-selector__radios {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.select-active {
+  background-color: gold;
+}
+
+button,
+input {
+  height: 4rem;
+  width: 4rem;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+
+button:where(input:checked) {
+  background-color: gold;
+  color: gold;
+}
