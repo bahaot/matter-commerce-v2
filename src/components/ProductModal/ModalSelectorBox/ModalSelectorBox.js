@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
 import SubHeading from "../../../UI/SubHeading/SubHeading";
 
@@ -45,35 +45,34 @@ const ModalSelectorBox = () => {
       };
     });
   };
-  console.log(data);
 
   return (
     <div className={styles["modal-details__selector"]}>
       <SubHeading className={styles["modal-selector__title"]}>size</SubHeading>
       <div className={styles["modal-selector__box"]}>
-        <div
-          className={styles["modal-selector__radios"]}
-          id="selectors"
-          onClick={handleClick}
-        >
+        <div className={styles["modal-selector__radios"]} onClick={handleClick}>
           {items.map((item, index) => {
             return (
               <button
                 key={item.id}
                 data-index={index}
-                className={item.isActive ? styles["select-active"] : ""}
+                className={`${styles["btn-select"]} ${
+                  item.isActive ? styles["select-active"] : ""
+                }`}
               >
                 <input
                   key={item.id}
                   type="radio"
                   name="size"
                   value={item.value}
+                  className={styles[`input-select`]}
                 />
+                <span>{item.value}</span>
               </button>
             );
           })}
         </div>
-        <label for="selectors">SIZE GUIDELINES</label>
+        <label>SIZE GUIDELINES</label>
       </div>
       <p className={styles["modal-selector__comment"]}>
         Model is a US Size 2-4, wears Matter Size 1. 175 cm tall.

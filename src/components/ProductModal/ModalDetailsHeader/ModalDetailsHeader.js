@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 
 import HeadingTernary from "../../../UI/HeadingSecondary/HeadingTernary/HeadingTernary";
-
+import { StarIcon } from "@heroicons/react/24/outline";
 import styles from "./ModalDetailsHeader.module.css";
 
-const ModalDetailsHeader = () => {
+const ModalDetailsHeader = ({ title, price, rating }) => {
+  const raitngArr = [];
+  const ratingRounded = Math.round(rating);
+
+  for (let i = 0; i <= ratingRounded; i++) {
+    if (i < ratingRounded) {
+      raitngArr.push(<StarIcon className={styles["star-active"]} />);
+      continue;
+    }
+    raitngArr.push(<StarIcon className={styles.star} />);
+  }
   return (
     <div className={styles["modal-details__header"]}>
       <HeadingTernary className={styles["modal-header__title"]}>
-        product title
+        {title}
       </HeadingTernary>
       <div className={styles["modal-header__details"]}>
-        <p className={styles["modal-header__price"]}>USD 139.90</p>
-        <div className={styles["modal-header__rating"]}>
-          ⭐⭐⭐⭐⭐ <span>5 of 5</span>
-        </div>
+        <p className={styles["modal-header__price"]}>USD {price}</p>
+        <div className={styles["modal-header__rating"]}>{raitngArr}</div>
       </div>
     </div>
   );

@@ -4,26 +4,26 @@ import SubHeading from "../../../UI/SubHeading/SubHeading";
 
 import styles from "./ModalDetailsList.module.css";
 
-const ModalDetailsList = () => {
+const ModalDetailsList = ({ lists }) => {
   return (
     <div className={styles["modal-details__list"]}>
       <div className={styles["modal-list__item"]}>
         <SubHeading className={styles["modal-product__subHeading"]}>
-          Artisan Employment
+        {lists}
         </SubHeading>
-        <span className={styles["modal-list__data"]}>54 jobs</span>
+        <span className={styles["modal-list__data"]}>{lists}</span>
       </div>
       <div className={styles["modal-list__item"]}>
         <SubHeading className={styles["modal-product__subHeading"]}>
-          Artisan Employment
+          {lists}
         </SubHeading>
-        <span className={styles["modal-list__data"]}>54 jobs</span>
+        <span className={styles["modal-list__data"]}>{lists}</span>
       </div>
       <div className={styles["modal-list__item"]}>
         <SubHeading className={styles["modal-product__subHeading"]}>
-          In Collab
+          {lists}
         </SubHeading>
-        <span className={styles["modal-list__data"]}>Augusta Mendoza</span>
+        <span className={styles["modal-list__data"]}>{lists}</span>
       </div>
     </div>
   );

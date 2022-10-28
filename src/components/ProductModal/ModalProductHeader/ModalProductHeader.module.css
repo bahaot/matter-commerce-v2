@@ -16,3 +16,10 @@
   height: 2.4rem;
   cursor: pointer;
 }
+
+@media (min-width: 1024px) {
+  .modal-product__header {
+    grid-column-start: 1;
+    grid-column-end: 3 q;
+  }
+}

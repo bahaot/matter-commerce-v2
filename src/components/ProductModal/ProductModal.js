@@ -1,6 +1,4 @@
-import React from "react";
-import { QuestionMarkCircleIcon } from "@heroicons/react/24/outline";
-
+import React, { useState } from "react";
 
 import ModalProductHeader from "./ModalProductHeader/ModalProductHeader";
 import ModalDetailsHeader from "./ModalDetailsHeader/ModalDetailsHeader";
@@ -9,39 +7,47 @@ import ModalDetailsList from "./ModalDetailsList/ModalDetailsList";
 import ModalSelectorBox from "./ModalSelectorBox/ModalSelectorBox";
 
 import styles from "./ProductModal.module.css";
+import ModalDetailsActions from "./ModalDetailsActions/ModalDetailsActions";
+import ModaProductImgs from "./ModalProductImgs/ModaProductImgs";
 
 const ProductModal = ({ onCloseModal, product }) => {
+  console.log(product);
   const handleCloseModal = () => {
     onCloseModal();
   };
+  // const obj = {
+  //   id: 3,
+  //   title: "Samsung Universe 9",
+  //   description:
+  //     "Samsung's new variant which goes beyond Galaxy to the Universe",
+  //   price: 1249,
+  //   discountPercentage: 15.46,
+  //   rating: 4.09,
+  //   stock: 36,
+  //   brand: "Samsung",
+  //   category: "smartphones",
+  //   thumbnail: "https://dummyjson.com/image/i/products/3/thumbnail.jpg",
+  //   images: ["https://dummyjson.com/image/i/products/3/1.jpg"],
+  // };
   return (
     <div className={styles["modal-overlay"]}>
       <div className={styles["modal-product"]}>
-        <ModalProductHeader onCloseModal={handleCloseModal} />
+        <ModalProductHeader
+          onCloseModal={handleCloseModal}
+          subtitle={product.category}
+        />
         <div className={styles["modal-product__details"]}>
-          <ModalDetailsHeader />
-          <ModalDetailsDescription />
-          <ModalDetailsList />
+          <ModalDetailsHeader
+            title={product.title}
+            price={product.price}
+            rating={product.rating}
+          />
+          <ModalDetailsDescription description={product.description} />
+          <ModalDetailsList lists="no data" />
           <ModalSelectorBox />
-          <div className={styles["modal-details__actions"]}>
-            <div className={styles["modal-actions__quantity"]}>
-              <label for="product-quantity">Quantity</label>
-              <input type="number" id="product-quantity" />
-            </div>
-            <button className={styles["modal-actions__cart"]}>
-              ADD TO CART
-            </button>
-            <div className={styles["modal-actions__wish"]}>
-              <button className={styles["modal-wish__button"]}>
-                <span>
-                  <QuestionMarkCircleIcon />
-                </span>
-                ADD TO WISHLIST
-              </button>
-            </div>
-          </div>
+          <ModalDetailsActions quantityInStock={product.stock} />
         </div>
-        <div className={styles["modal-product__imgs"]}></div>
+        <ModaProductImgs images={product.images} />
       </div>
     </div>
   );

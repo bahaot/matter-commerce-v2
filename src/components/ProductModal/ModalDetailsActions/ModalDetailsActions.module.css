@@ -1,0 +1,70 @@
+.product-quantity__title {
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.modal-details__actions {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.product-quantity__box {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  width: 100%;
+  height: 4rem;
+}
+
+.product-quantity__box button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-quantity__box button .icon {
+  height: 2rem;
+}
+
+.product-quantity__box input {
+  border: none;
+  background: none;
+  width: 50%;
+  outline: none;
+
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-actions__cart {
+  background-color: var(--main-color);
+  width: 100%;
+  height: 4rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.modal-actions__wish span .icon {
+  height: 2.4rem;
+}
+
+.modal-actions__wish {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.modal-actions__wish button {
+  font-size: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--main-color);
+  padding-bottom: 0.8rem;
+  cursor: pointer;
+}

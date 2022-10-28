@@ -19,3 +19,8 @@
   line-height: 1.25;
   color: #666;
 }
+
+.modal-description__text span {
+  color: skyblue;
+  cursor: pointer;
+}

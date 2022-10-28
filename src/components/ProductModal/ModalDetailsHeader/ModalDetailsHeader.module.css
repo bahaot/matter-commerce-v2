@@ -21,3 +21,15 @@
   color: var(--label-color);
   font-size: 2.4rem;
 }
+
+.star {
+  height: 2.4rem;
+  color: var(--label-color);
+}
+
+.star-active {
+  height: 2.4rem;
+  fill: var(--label-color);
+  color: var(--label-color);
+}
+

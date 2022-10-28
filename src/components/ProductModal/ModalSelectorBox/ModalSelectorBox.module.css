@@ -1,6 +1,26 @@
-input:where([type="radio"]) {
-  border: none;
-  opacity: 0;
+.modal-details__selector {
+  margin-bottom: 2.4rem;
+}
+
+.modal-selector__title {
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+
+.modal-selector__box,
+.btn-select span,
+.modal-selector__comment {
+  font-family: "Montserrat", sans-serif;
+}
+.modal-selector__box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+
+.modal-selector__box label {
+  font-size: 1.2rem;
 }
 
 .modal-selector__radios {
@@ -9,19 +29,41 @@ input:where([type="radio"]) {
   gap: 1.2rem;
 }
 
-.select-active {
-  background-color: gold;
+.btn-select.select-active {
+  background-color: #f3f3f3;
+  border: 1px solid #dedede;
 }
 
-button,
-input {
+.input-select {
+  border: none;
+  opacity: 0;
+}
+
+.btn-select,
+.input-select {
   height: 4rem;
-  width: 4rem;
-  background-color: var(--main-color);
+  width: 5rem;
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
   cursor: pointer;
+
+  transition: all 0.1s;
 }
 
-button:where(input:checked) {
-  background-color: gold;
-  color: gold;
+.btn-select {
+  position: relative;
+}
+
+.btn-select span {
+  font-size: 1.4rem;
+  color: #515356;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-selector__comment {
+  font-size: 1.2rem;
+  color: #666;
 }

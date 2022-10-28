@@ -6,11 +6,11 @@ import SubHeading from "../../../UI/SubHeading/SubHeading";
 
 import styles from "./ModalProductHeader.module.css";
 
-const ModalProductHeader = ({ onCloseModal }) => {
+const ModalProductHeader = ({ onCloseModal, subtitle }) => {
   return (
     <div className={styles["modal-product__header"]}>
       <SubHeading className={styles["modal-product__subheading"]}>
-        product subtitle
+        {subtitle}
       </SubHeading>
       <button onClick={onCloseModal}>
         <XMarkIcon className={styles["modal-header__close"]} />
