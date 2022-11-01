@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 import ModalProductHeader from "./ModalProductHeader/ModalProductHeader";
 import ModalDetailsHeader from "./ModalDetailsHeader/ModalDetailsHeader";
@@ -10,25 +11,7 @@ import styles from "./ProductModal.module.css";
 import ModalDetailsActions from "./ModalDetailsActions/ModalDetailsActions";
 import ModaProductImgs from "./ModalProductImgs/ModaProductImgs";
 
-const ProductModal = ({ onCloseModal, product }) => {
-  console.log(product);
-  const handleCloseModal = () => {
-    onCloseModal();
-  };
-  // const obj = {
-  //   id: 3,
-  //   title: "Samsung Universe 9",
-  //   description:
-  //     "Samsung's new variant which goes beyond Galaxy to the Universe",
-  //   price: 1249,
-  //   discountPercentage: 15.46,
-  //   rating: 4.09,
-  //   stock: 36,
-  //   brand: "Samsung",
-  //   category: "smartphones",
-  //   thumbnail: "https://dummyjson.com/image/i/products/3/thumbnail.jpg",
-  //   images: ["https://dummyjson.com/image/i/products/3/1.jpg"],
-  // };
+const OverLayProduct = ({ product, handleCloseModal }) => {
   return (
     <div className={styles["modal-overlay"]}>
       <div className={styles["modal-product"]}>
@@ -50,6 +33,31 @@ const ProductModal = ({ onCloseModal, product }) => {
         <ModaProductImgs images={product.images} />
       </div>
     </div>
+  );
+};
+
+const ProductModal = ({ onCloseModal, product }) => {
+  const handleCloseModal = () => {
+    onCloseModal();
+  };
+  // const obj = {
+  //   id: 3,
+  //   title: "Samsung Universe 9",
+  //   description:
+  //     "Samsung's new variant which goes beyond Galaxy to the Universe",
+  //   price: 1249,
+  //   discountPercentage: 15.46,
+  //   rating: 4.09,
+  //   stock: 36,
+  //   brand: "Samsung",
+  //   category: "smartphones",
+  //   thumbnail: "https://dummyjson.com/image/i/products/3/thumbnail.jpg",
+  //   images: ["https://dummyjson.com/image/i/products/3/1.jpg"],
+  // };
+
+  return ReactDOM.createPortal(
+    <OverLayProduct product={product} handleCloseModal={handleCloseModal} />,
+    document.getElementById("modal-product")
   );
 };
 
