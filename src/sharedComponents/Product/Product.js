@@ -1,6 +1,6 @@
 import React from "react";
 
-import RelativeDiv from "../../../UI/RelativeDiv/RelativeDiv";
+import RelativeDiv from "../../UI/RelativeDiv/RelativeDiv";
 
 import ProductImg from "./ProductImg/ProductImg";
 import ProductDescription from "./ProductDescription/ProductDescription";
@@ -20,6 +20,7 @@ const Product = ({
   const handleQuickViewClick = (e, index) => {
     onHandleModal(e, index);
   };
+  
   return (
     <RelativeDiv className={styles.product}>
       <ProductImg imgSrc={img} />

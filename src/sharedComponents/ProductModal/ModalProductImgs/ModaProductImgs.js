@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import styles from "./ModalProductImgs.module.css";
 
-const ModaProductImgs = ({ images }) => {
-  const [imgs, setImages] = useState(images);
+const ModaProductImgs = ({ image }) => {
+  const [imgs, setImages] = useState(image);
   const [aciveImgIndex, setActiveImgIndex] = useState(0);
 
   const hanldeActiveImg = (e) => {
@@ -14,18 +14,10 @@ const ModaProductImgs = ({ images }) => {
   return (
     <div className={styles["modal-product__imgs"]}>
       <div className={styles["modal-imgs__box"]} onClick={hanldeActiveImg}>
-        {imgs.map((src, index) => {
-          return (
-            <img
-              src={src}
-              className={`${styles["modal-imgs__img"]}`}
-              data-index={index}
-            />
-          );
-        })}
+        <img src={image} className={`${styles["modal-imgs__img"]}`} />
       </div>
       <div className={styles["img-active"]}>
-        <img src={images[aciveImgIndex]} />
+        {/* <img src={images[aciveImgIndex]} /> */}
       </div>
     </div>
   );

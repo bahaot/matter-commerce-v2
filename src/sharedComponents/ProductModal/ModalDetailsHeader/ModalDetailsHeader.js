@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import HeadingTernary from "../../../UI/HeadingSecondary/HeadingTernary/HeadingTernary";
+import HeadingTernary from "../../../UI/HeadingTernary/HeadingTernary";
 import { StarIcon } from "@heroicons/react/24/outline";
 import styles from "./ModalDetailsHeader.module.css";
 

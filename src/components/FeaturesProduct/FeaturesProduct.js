@@ -1,21 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "../../UI/Container/Container";
 import HeadingSecondary from "../../UI/HeadingSecondary/HeadingSecondary";
-import ProductModal from "../ProductModal/ProductModal";
+import ProductModal from "../../sharedComponents/ProductModal/ProductModal";
 
 import styles from "./FeaturesProduct.module.css";
 
-import Product from "./Product/Product";
+import Product from "../../sharedComponents/Product/Product";
+import { getApiData } from "../../helper";
 
-const FeaturesProduct = ({ comingProducts }) => {
-  const [productState, setProductsState] = useState({
-    products: comingProducts.slice(0, 8),
-    modalIndex: 0,
-    isModalOpen: false,
-  });
+const FeaturesProduct = () => {
+  const [productState, setProductsState] = useState({});
+  // initialize it with object to make the destructuring work
 
-  const { products, modalIndex, isModalOpen } = productState;
-  console.log(products);
+  const [loaadApi, setLoadApi] = useState(false);
+
+  useEffect(() => {
+    async function getApi() {
+      let isMounted = true;
+      if (isMounted) {
+        const result = await getApiData(
+          "https://fakestoreapi.com/products?limit=8"
+        );
+
+        setProductsState({
+          products: result,
+          modalIndex: 0,
+          isModalOpen: false,
+        });
+
+        setLoadApi(true);
+
+        isMounted = false;
+      }
+    }
+
+    getApi();
+  }, [loaadApi]);
+
+  const { products = [], modalIndex = 0, isModalOpen = false } = productState;
 
   const handleModal = (e, i) => {
     setProductsState((prevState) => {
@@ -30,6 +52,7 @@ const FeaturesProduct = ({ comingProducts }) => {
   };
 
   const titleSection = "Featured";
+
   return (
     <section>
       <Container>
@@ -42,7 +65,7 @@ const FeaturesProduct = ({ comingProducts }) => {
                 indexInTheArray={i}
                 labelTitle={p.category}
                 title={p.title}
-                img={p.images[0]}
+                img={p.image}
                 price={p.price}
                 onHandleModal={handleModal}
               />

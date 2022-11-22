@@ -1,0 +1,17 @@
+.filter-header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.filter-header__container.active {
+  margin-bottom: 1.2rem;
+}
+
+.filter-header__heading {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  color: var(--main-color);
+}

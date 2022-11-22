@@ -28,9 +28,9 @@ const OverLayProduct = ({ product, handleCloseModal }) => {
           <ModalDetailsDescription description={product.description} />
           <ModalDetailsList lists="no data" />
           <ModalSelectorBox />
-          <ModalDetailsActions quantityInStock={product.stock} />
+          <ModalDetailsActions quantityInStock={product.rating.count} />
         </div>
-        <ModaProductImgs images={product.images} />
+        <ModaProductImgs image={product.image} />
       </div>
     </div>
   );

@@ -1,0 +1,13 @@
+.categories-container {
+  margin-bottom: 2.4rem;
+  transition: all 0.3s;
+}
+
+.categories-lists {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  row-gap: 2.4rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2.4rem 0;
+}

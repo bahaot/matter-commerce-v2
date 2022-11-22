@@ -1,6 +1,6 @@
 import React from "react";
-import SubHeading from "../../../../UI/SubHeading/SubHeading";
-import HeadingTernary from "../../../../UI/HeadingSecondary/HeadingTernary/HeadingTernary";
+import SubHeading from "../../../UI/SubHeading/SubHeading";
+import HeadingTernary from "../../../UI/HeadingTernary/HeadingTernary";
 
 import styles from "./ProductDescription.module.css";
 

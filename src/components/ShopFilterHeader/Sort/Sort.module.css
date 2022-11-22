@@ -1,0 +1,35 @@
+.filter-header__sort {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.filter-header__sort .icon {
+  font-size: 1.2rem;
+  height: 2.4rem;
+  width: 2.4rem;
+  margin-left: 1.2rem;
+
+  transition: all 0.2s;
+}
+
+.filetr-header__sort label {
+  font-size: 2.4rem;
+  color: var(--main-color);
+}
+
+.filter-header__sort select {
+  font-size: 1.4rem;
+  padding: 1.2rem 0 0.8rem 1rem;
+  width: 16.5rem;
+  border: 1px solid #dedede;
+  color: #515356;
+  display: flex;
+  align-items: center;
+}
+
+/* active */
+.filter-header__sort.active .icon {
+  color: var(--label-color);
+  transform: translateY(-1rem);
+}
