@@ -4,12 +4,21 @@ import styles from "./ShopFilterheader.module.css";
 import Sort from "./Sort/Sort";
 import Categories from "./Categories/Categories";
 
-const ShopFilterheader = () => {
+const ShopFilterheader = ({ onChangeUrl, onChangeSort }) => {
   const [isCategoriesActive, setIsCategoriesActive] = useState(false);
 
   const handleFunnelClick = () => {
     setIsCategoriesActive(!isCategoriesActive);
   };
+
+  const handleCategoryChange = (category) => {
+    onChangeUrl(category);
+  };
+
+  const handleSortChange = (sort) => {
+    onChangeSort(sort);
+  };
+
   return (
     <>
       <Container
@@ -18,9 +27,16 @@ const ShopFilterheader = () => {
         }`}
       >
         <h3 className={styles["filter-header__heading"]}>category</h3>
-        <Sort onFunnelClick={handleFunnelClick} isActive={isCategoriesActive} />
+        <Sort
+          onFunnelClick={handleFunnelClick}
+          onChangeSort={handleSortChange}
+          isActive={isCategoriesActive}
+        />
       </Container>
-      <Categories isActive={isCategoriesActive} />
+      <Categories
+        isActive={isCategoriesActive}
+        onCategoryChange={handleCategoryChange}
+      />
     </>
   );
 };

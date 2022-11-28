@@ -6,7 +6,7 @@ import { getApiData } from "../../../helper";
 
 import styles from "./Categories.module.css";
 
-const Categories = ({ isActive }) => {
+const Categories = ({ isActive, onCategoryChange }) => {
   const [categories, setCategories] = useState(null);
 
   const [t, setT] = useState(false);
@@ -21,13 +21,23 @@ const Categories = ({ isActive }) => {
 
     getResult();
   }, []);
+
+  const hanldeUlClick = (e) => {
+    const clicked = e.target.closest("li");
+    // get the parent element of the clicked button
+
+    if (!clicked) return;
+
+    const category = clicked.dataset.category;
+    onCategoryChange(category);
+  };
   return (
     <>
       {isActive ? (
         <Container className={styles["categories-container"]}>
-          <ul className={styles["categories-lists"]}>
+          <ul className={styles["categories-lists"]} onClick={hanldeUlClick}>
             {categories.map((i) => (
-              <CategoryListButton key={i} data-category={i}>
+              <CategoryListButton key={i} category={i}>
                 {i}
               </CategoryListButton>
             ))}

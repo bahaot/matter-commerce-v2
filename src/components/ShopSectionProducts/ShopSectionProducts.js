@@ -8,33 +8,33 @@ import { getApiData } from "../../helper";
 
 import styles from "./ShopSectionProducts.module.css";
 
-const ShopSectionProducts = () => {
+const ShopSectionProducts = ({ defaultApi }) => {
   const [productState, setProductsState] = useState({});
   // initialize it with object to make the destructuring work
 
   const [loaadApi, setLoadApi] = useState(false);
-  const [url, setUrl] = useState("https://fakestoreapi.com/products");
+  const [url, setUrl] = useState(defaultApi);
 
   useEffect(() => {
     async function getApi() {
-      let isMounted = true;
-      if (isMounted) {
-        const result = await getApiData(url);
+      const result = await getApiData(url);
 
-        setProductsState({
-          products: result,
-          modalIndex: 0,
-          isModalOpen: false,
-        });
+      setProductsState({
+        products: result,
+        modalIndex: 0,
+        isModalOpen: false,
+      });
 
-        setLoadApi(true);
-
-        isMounted = false;
-      }
+      setLoadApi(true);
     }
 
     getApi();
   }, [loaadApi, url]);
+
+  useEffect(() => {
+    console.log(defaultApi);
+    setUrl(defaultApi);
+  }, [defaultApi]);
 
   const { products = [], modalIndex = 0, isModalOpen = false } = productState;
 

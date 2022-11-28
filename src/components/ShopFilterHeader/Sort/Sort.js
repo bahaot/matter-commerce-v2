@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { FunnelIcon } from "@heroicons/react/24/outline";
 import styles from "./Sort.module.css";
 
-const Sort = ({ onFunnelClick, isActive }) => {
+const Sort = ({ onFunnelClick, isActive, onChangeSort }) => {
+  const [sort, setSort] = useState("inc");
+  const handleChangeSort = (e) => {
+    setSort(e.target.value);
+  };
+
+  useEffect(() => {
+    onChangeSort(sort);
+  }, [sort]);
+
   return (
     <div
       className={`${styles["filter-header__sort"]} ${
@@ -11,10 +20,9 @@ const Sort = ({ onFunnelClick, isActive }) => {
       }`}
     >
       <label>Sort by</label>
-      <select value="price1">
-        <option value="price1">price</option>
-        <option value="price2">price</option>
-        <option value="price3">price</option>
+      <select value={sort} onChange={handleChangeSort}>
+        <option value="desc">descendent</option>
+        <option value="inc">indecendent</option>
       </select>
       <button className={styles["sort-button__mobile"]} onClick={onFunnelClick}>
         <FunnelIcon className={styles["icon"]} />

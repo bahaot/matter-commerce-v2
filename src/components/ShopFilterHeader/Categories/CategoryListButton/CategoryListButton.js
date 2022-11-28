@@ -3,10 +3,10 @@ import React from "react";
 
 import styles from "./CategoryListButton.module.css";
 
-const CategoryListButton = ({ children, className }) => {
+const CategoryListButton = ({ children, className, category }) => {
   const liClasses = `${styles["category-list__item"]} ${className}`;
   return (
-    <li className={liClasses}>
+    <li className={liClasses} data-category={category}>
       <button className={styles["list-button"]}>
         {children}
         <ChevronDownIcon className={styles.icon} />
