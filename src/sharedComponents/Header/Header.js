@@ -4,21 +4,28 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 
 import Container from "../../UI/Container/Container";
 
+import Cart from "../Cart/Cart";
 import NavLeft from "./NavLeft/NavLeft";
 import NavRight from "./NavRight/NavRight";
 import SearchBar from "./NavLeft/SearchBar/SearchBar";
 
-
 import styles from "./Header.module.css";
 
-const Header = () => {
+const Header = ({ cartProducts }) => {
   const [navOpen, setNavOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const handleOpenCart = (e, boolean) => {
+    setIsCartOpen(boolean);
+  };
+
   const handleNavOpen = (e) => {
     e.preventDefault();
     if (!e.target) return;
 
     setNavOpen(!navOpen);
   };
+  
   return (
     <header>
       <Container className={styles["container-nav"]}>
@@ -27,10 +34,16 @@ const Header = () => {
         </button>
         <NavLeft isNavOpen={navOpen} onOpenNav={handleNavOpen} />
 
-        <NavRight isNavOpen={navOpen}/>
+        <NavRight handleOpenCart={handleOpenCart} />
       </Container>
 
       <SearchBar />
+
+      <Cart
+        isCartOpen={isCartOpen}
+        onOpenCart={handleOpenCart}
+        products={cartProducts}
+      />
     </header>
   );
 };

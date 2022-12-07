@@ -3,13 +3,17 @@
 }
 
 .list-right {
-    display: flex;
-    gap: 1.2rem;
-    align-items: center;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
 }
 
-.list-right li a {
+.list-right li a, .list-right li button {
   font-size: 1.4rem;
+}
+
+.btn-nav__right:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {

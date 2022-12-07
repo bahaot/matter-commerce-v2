@@ -5,7 +5,7 @@ import Slider from "../components/Slider/Slider";
 import ShopFilterheader from "../components/ShopFilterHeader/ShopFilterheader";
 import ShopSectionProducts from "../components/ShopSectionProducts/ShopSectionProducts";
 
-const Shop = () => {
+const Shop = ({ cartProducts }) => {
   const [url, setUrl] = useState("https://fakestoreapi.com/products");
   // use this as default api call
 
@@ -21,7 +21,7 @@ const Shop = () => {
   return (
     <React.Fragment>
       <AlertBanner />
-      <Header />
+      <Header cartProducts={cartProducts}  />
       <Slider />
       <ShopFilterheader
         onChangeUrl={handleChangeCategory}
