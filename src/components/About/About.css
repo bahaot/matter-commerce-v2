@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+.section-about {
+  margin-bottom: 12.8rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+@media (max-width: 62.5em) {
+  .about-container {
+    flex-direction: column;
+  }
+}

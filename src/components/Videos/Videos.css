@@ -1,0 +1,17 @@
+.section-videos {
+  margin-bottom: 12.8rem;
+}
+
+.videos-contaienr {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2.4rem;
+}
+
+@media (max-width: 62.5em) {
+  .videos-contaienr {
+    grid-template-columns: 1fr;
+    place-items: center;
+    row-gap: 4.8rem;
+  }
+}
