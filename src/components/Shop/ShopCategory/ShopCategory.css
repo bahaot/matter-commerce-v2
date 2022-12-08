@@ -1,0 +1,23 @@
+.card-shop {
+  width: 100%;
+}
+
+.card-shop img {
+  width: 100%;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  position: absolute;
+  bottom: 17%;
+  width: 100%;
+  padding: 1.2rem 2rem 0.8rem 2rem;
+  height: 5rem;
+  background-color: #fff;
+  color: #030303;
+  text-align: center;
+}
+

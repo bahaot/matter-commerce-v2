@@ -1,0 +1,12 @@
+.btn-main {
+  background-color: var(--main-color);
+  color: #fff;
+  width: 13rem;
+  height: 4rem;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 12.8rem;
+}
