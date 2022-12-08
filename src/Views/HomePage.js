@@ -5,16 +5,16 @@ import Main from "../UI/Main";
 import Slider from "../components/Slider/Slider";
 
 import FeaturesProduct from "../components/FeaturesProduct/FeaturesProduct";
-const Home = ({ cartProducts }) => {
+const Home = ({ cartProducts, onAddToCart }) => {
   // this funciton is for take a dicision for open or close the cart
 
   return (
     <React.Fragment>
       <AlertBanner />
-      <Header cartProducts={cartProducts}  />
+      <Header cartProducts={cartProducts} />
       <Main>
         <Slider />
-        <FeaturesProduct />
+        <FeaturesProduct onAddToCart={onAddToCart} />
       </Main>
     </React.Fragment>
   );

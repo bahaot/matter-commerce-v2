@@ -7,7 +7,7 @@ import {
 
 import styles from "./ModalDetailsActions.module.css";
 
-const ModalDetailsActions = ({ quantityInStock }) => {
+const ModalDetailsActions = ({ quantityInStock, onAddToCart }) => {
   const [quantity, setQuantity] = useState(0);
 
   const decreaseQuantity = () => {
@@ -18,6 +18,12 @@ const ModalDetailsActions = ({ quantityInStock }) => {
     if (quantity > quantityInStock) return;
     setQuantity((prevState) => (prevState += 1));
   };
+
+  const handleOnAddToCart = () => {
+    
+    onAddToCart(quantity);
+  };
+
   return (
     <>
       <label
@@ -38,7 +44,12 @@ const ModalDetailsActions = ({ quantityInStock }) => {
             </button>
           </div>
         </div>
-        <button className={styles["modal-actions__cart"]}>ADD TO CART</button>
+        <button
+          className={styles["modal-actions__cart"]}
+          onClick={handleOnAddToCart}
+        >
+          ADD TO CART
+        </button>
         <div className={styles["modal-actions__wish"]}>
           {" "}
           <span>

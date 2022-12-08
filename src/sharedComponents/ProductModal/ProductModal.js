@@ -11,7 +11,11 @@ import styles from "./ProductModal.module.css";
 import ModalDetailsActions from "./ModalDetailsActions/ModalDetailsActions";
 import ModaProductImgs from "./ModalProductImgs/ModaProductImgs";
 
-const OverLayProduct = ({ product, handleCloseModal }) => {
+const OverLayProduct = ({ product, handleCloseModal, onAddToCart }) => {
+  const handleAddToCart =  (quantity) => {
+    onAddToCart(product, quantity);
+  }
+  
   return (
     <div className={styles["modal-overlay"]}>
       <div className={styles["modal-product"]}>
@@ -28,7 +32,7 @@ const OverLayProduct = ({ product, handleCloseModal }) => {
           <ModalDetailsDescription description={product.description} />
           <ModalDetailsList lists="no data" />
           <ModalSelectorBox />
-          <ModalDetailsActions quantityInStock={product.rating.count} />
+          <ModalDetailsActions quantityInStock={product.rating.count} onAddToCart={handleAddToCart} />
         </div>
         <ModaProductImgs image={product.image} />
       </div>
@@ -36,10 +40,11 @@ const OverLayProduct = ({ product, handleCloseModal }) => {
   );
 };
 
-const ProductModal = ({ onCloseModal, product }) => {
+const ProductModal = ({ onCloseModal, product, onAddToCart }) => {
   const handleCloseModal = () => {
     onCloseModal();
   };
+  
   // const obj = {
   //   id: 3,
   //   title: "Samsung Universe 9",
@@ -56,7 +61,7 @@ const ProductModal = ({ onCloseModal, product }) => {
   // };
 
   return ReactDOM.createPortal(
-    <OverLayProduct product={product} handleCloseModal={handleCloseModal} />,
+    <OverLayProduct product={product} handleCloseModal={handleCloseModal} onAddToCart={onAddToCart} />,
     document.getElementById("modal-product")
   );
 };

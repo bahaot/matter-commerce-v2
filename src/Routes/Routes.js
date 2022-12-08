@@ -5,10 +5,14 @@ import ShopPage from "../Views/ShopPage";
 
 const PageRoutes = () => {
   const [cartState, setCartState] = useState([]);
+  // this array sholud be array of objects contains information about the coming product
 
-  const handleAddProductToCart = (newProduct) => {
-    console.log(newProduct);
-    setCartState([...cartState, newProduct]);
+  const handleAddProductToCart = (newProduct, quantity) => {
+    if (!cartState.find((item) => item === newProduct)) {
+      // check if the product is already in the cart
+      setCartState([...cartState, {...newProduct, quantity}]);
+      console.log(quantity)
+    }
   };
 
   return (
