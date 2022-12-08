@@ -11,8 +11,11 @@ import AsSeenOn from "../components/AsSeenOn/AsSeenOn"
 import Footer from '../components/Footer/Footer'
 import FeaturesProduct from "../components/FeaturesProduct/FeaturesProduct";
 
+const Home = ({ cartProducts, onAddToCart }) => {
+
 
 const Home = ({ cartProducts }) => {
+
   // this funciton is for take a dicision for open or close the cart
 
   return (
@@ -21,6 +24,9 @@ const Home = ({ cartProducts }) => {
       <Header cartProducts={cartProducts} />
       <Main>
         <Slider />
+
+        <FeaturesProduct onAddToCart={onAddToCart} />
+
         <FeaturesProduct />
         <About />
         <Explore />
@@ -28,6 +34,7 @@ const Home = ({ cartProducts }) => {
         <Videos />
         <AsSeenOn />
         <Footer />
+
       </Main>
     </React.Fragment>
   );

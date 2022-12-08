@@ -17,7 +17,7 @@ const ModaProductImgs = ({ image }) => {
         <img src={image} className={`${styles["modal-imgs__img"]}`} />
       </div>
       <div className={styles["img-active"]}>
-        {/* <img src={images[aciveImgIndex]} /> */}
+        <img src={image} />
       </div>
     </div>
   );

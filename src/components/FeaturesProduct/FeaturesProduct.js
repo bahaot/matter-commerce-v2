@@ -8,7 +8,7 @@ import styles from "./FeaturesProduct.module.css";
 import Product from "../../sharedComponents/Product/Product";
 import { getApiData } from "../../helper";
 
-const FeaturesProduct = () => {
+const FeaturesProduct = ({ onAddToCart }) => {
   const [productState, setProductsState] = useState({});
   // initialize it with object to make the destructuring work
 
@@ -78,6 +78,7 @@ const FeaturesProduct = () => {
         <ProductModal
           onCloseModal={handleCloseModal}
           product={products[modalIndex]}
+          onAddToCart={onAddToCart}
         />
       ) : (
         ""
