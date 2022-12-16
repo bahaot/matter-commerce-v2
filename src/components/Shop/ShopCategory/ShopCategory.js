@@ -1,11 +1,11 @@
 import React from "react";
-import './ShopCategory.css'
+import styles from './ShopCategory.module.css'
 
 const ShopCategory = (props) => {
   return (
-    <div className="card-shop">
+    <div className={styles["card-shop"]}>
       <img src={props.src} />
-      <div className="card-title">{props.title}</div>
+      <div className={styles["card-title"]}>{props.title}</div>
     </div>
   );
 };

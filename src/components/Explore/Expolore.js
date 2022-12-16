@@ -3,7 +3,7 @@ import ExploreCard from "./ExploreCard/ExploreCard";
 import HeadingSecondary from "../../UI/HeadingSecondary/HeadingSecondary";
 import Container from "../../UI/Container/Container";
 import MainBtn from "../../UI/MainBtn/MainBtn";
-import "./Explore.css";
+import styles from "./Explore.module.css";
 
 const Expolore = () => {
   const sectionTitle = "Explore";
@@ -43,15 +43,15 @@ const Expolore = () => {
     },
   ];
   return (
-    <section className="section-explore">
+    <section className={styles["section-explore"]}>
       <HeadingSecondary>{sectionTitle}</HeadingSecondary>
-      <Container className="container-explore">
+      <Container className={styles["container-explore"]}>
         {ExploresArr.map((item) => (
           <ExploreCard {...item} />
         ))}
       </Container>
 
-      <MainBtn className="btn-explore">See the journal</MainBtn>
+      <MainBtn className={styles["btn-explore"]}>See the journal</MainBtn>
     </section>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
-import './AboutImg.css'
+import styles from './AboutImg.module.css'
 
 const AboutImg = () => {
   return (
-    <div className="about-img-box">
+    <div className={styles["about-img-box"]}>
       <img src="./imgs/about.png" />
     </div>
   );

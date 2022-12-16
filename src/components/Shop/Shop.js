@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../../UI/Container/Container";
 import HeadingSecondary from "../../UI/HeadingSecondary/HeadingSecondary";
 import ShopCategory from "./ShopCategory/ShopCategory";
-import "./Shop.css";
+import styles from "./Shop.module.css";
 
 const Shop = () => {
   const sectionTitle = "Shop";
@@ -13,9 +13,9 @@ const Shop = () => {
     { title: "Accessories", imgSrc: "imgs/shop/accessories.png" },
   ];
   return (
-    <section className="section-shop">
+    <section className={styles["section-shop"]}>
       <HeadingSecondary>{sectionTitle}</HeadingSecondary>
-      <Container className="shop-container">
+      <Container className={styles["shop-container"]}>
         {shopCategories.map((cat) => (
           <ShopCategory src={cat.imgSrc} title={cat.title} />
         ))}
