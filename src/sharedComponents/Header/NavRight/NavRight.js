@@ -1,16 +1,20 @@
-import React, { useReducer } from "react";
+import React from "react";
 
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 
 import styles from "./NavRight.module.css";
+import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../../utilis/firebase";
 
 const NavRight = ({ handleOpenCart }) => {
+  const [user, loading] = useAuthState(auth);
   return (
     <ul className={styles["list-right"]}>
       <li className={styles.hidden}>
-        <a>LOGIN</a>
+        {user ? <p>{user.displayName}</p> : <Link to="/auth/login">Login</Link>}
       </li>
 
       <li className={styles.hidden}>
