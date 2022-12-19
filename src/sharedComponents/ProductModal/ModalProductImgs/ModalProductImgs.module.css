@@ -23,6 +23,10 @@
   border: 2px solid var(--label-color);
 }
 
+.product-img {
+  width: 50%;
+  object-fit: cover;
+}
 @media (min-width: 1024px) {
   .modal-product__imgs {
     display: flex;

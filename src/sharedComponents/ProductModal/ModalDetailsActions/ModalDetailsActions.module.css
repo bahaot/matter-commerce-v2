@@ -50,6 +50,10 @@
   font-size: 1.2rem;
 }
 
+.modal-actions__cart:hover {
+  cursor: pointer;
+}
+
 .modal-actions__wish span .icon {
   height: 2.4rem;
 }

@@ -4,8 +4,9 @@ import Header from "../sharedComponents/Header/Header";
 import Slider from "../components/Slider/Slider";
 import ShopFilterheader from "../components/ShopFilterHeader/ShopFilterheader";
 import ShopSectionProducts from "../components/ShopSectionProducts/ShopSectionProducts";
+import Footer from "../components/Footer/Footer";
 
-const Shop = ({ cartProducts }) => {
+const Shop = ({ cartProducts, onAddToCart, onDeleteProduct }) => {
   const [url, setUrl] = useState("https://fakestoreapi.com/products");
   // use this as default api call
 
@@ -21,13 +22,18 @@ const Shop = ({ cartProducts }) => {
   return (
     <React.Fragment>
       <AlertBanner />
-      <Header cartProducts={cartProducts}  />
+      <Header
+        cartProducts={cartProducts}
+        onAddToCart={onAddToCart}
+        onDeleteProduct={onDeleteProduct}
+      />
       <Slider />
       <ShopFilterheader
         onChangeUrl={handleChangeCategory}
         onChangeSort={handleChangeSort}
       />
-      <ShopSectionProducts defaultApi={url} />
+      <ShopSectionProducts defaultApi={url} onAddToCart={onAddToCart}/>
+      <Footer />
     </React.Fragment>
   );
 };

@@ -8,10 +8,10 @@ import {
 import styles from "./ModalDetailsActions.module.css";
 
 const ModalDetailsActions = ({ quantityInStock, onAddToCart }) => {
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
 
   const decreaseQuantity = () => {
-    if (quantity <= 0) return;
+    if (quantity <= 1) return;
     setQuantity((prevState) => (prevState -= 1));
   };
   const increaseQuantity = () => {
@@ -20,7 +20,6 @@ const ModalDetailsActions = ({ quantityInStock, onAddToCart }) => {
   };
 
   const handleOnAddToCart = () => {
-    
     onAddToCart(quantity);
   };
 

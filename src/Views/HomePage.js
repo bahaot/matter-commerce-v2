@@ -12,18 +12,18 @@ import Footer from "../components/Footer/Footer";
 import FeaturesProduct from "../components/FeaturesProduct/FeaturesProduct";
 import LoginContext from "../context/login-context";
 
-const Home = ({ cartProducts, onAddToCart }) => {
+const Home = ({ cartProducts, onAddToCart, onDeleteProduct }) => {
   // this funciton is for take a dicision for open or close the cart
 
   const loginStatus = useContext(LoginContext);
   return (
     <React.Fragment>
       <AlertBanner />
-      <Header cartProducts={cartProducts} />
+      <Header cartProducts={cartProducts} onAddToCart={onAddToCart} onDeleteProduct={onDeleteProduct} />
       <Main>
         <Slider />
 
-        <FeaturesProduct onAddToCart={onAddToCart} />
+        <FeaturesProduct onAddToCart={onAddToCart}/>
         <About />
         <Explore />
         <Shop />

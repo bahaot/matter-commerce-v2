@@ -11,7 +11,7 @@ import SearchBar from "./NavLeft/SearchBar/SearchBar";
 
 import styles from "./Header.module.css";
 
-const Header = ({ cartProducts }) => {
+const Header = ({ cartProducts, onAddToCart, onDeleteProduct }) => {
   const [navOpen, setNavOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -43,6 +43,7 @@ const Header = ({ cartProducts }) => {
         isCartOpen={isCartOpen}
         onOpenCart={handleOpenCart}
         products={cartProducts}
+        onDeleteProduct={onDeleteProduct}
       />
     </header>
   );

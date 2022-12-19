@@ -8,7 +8,7 @@ import { getApiData } from "../../helper";
 
 import styles from "./ShopSectionProducts.module.css";
 
-const ShopSectionProducts = ({ defaultApi }) => {
+const ShopSectionProducts = ({ defaultApi, onAddToCart }) => {
   const [productState, setProductsState] = useState({});
   // initialize it with object to make the destructuring work
 
@@ -52,7 +52,7 @@ const ShopSectionProducts = ({ defaultApi }) => {
 
   return (
     <>
-      <section>
+      <section className={styles['section-products']}>
         {loaadApi && (
           <Container className={styles["product-container"]}>
             {products.map((p, i) => {
@@ -74,6 +74,7 @@ const ShopSectionProducts = ({ defaultApi }) => {
           <ProductModal
             onCloseModal={handleCloseModal}
             product={products[modalIndex]}
+            onAddToCart={onAddToCart}
           />
         ) : (
           ""

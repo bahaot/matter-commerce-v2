@@ -13,8 +13,12 @@ const PageRoutes = () => {
     if (!cartState.find((item) => item === newProduct)) {
       // check if the product is already in the cart
       setCartState([...cartState, { ...newProduct, quantity }]);
-      console.log(quantity);
     }
+  };
+  const handleDeleteProductFromCart = (productId) => {
+    const filteredProducts = cartState.filter((p) => p.id !== productId);
+
+    setCartState(filteredProducts);
   };
 
   return (
@@ -27,6 +31,8 @@ const PageRoutes = () => {
               <HomePage
                 cartProducts={cartState}
                 onAddToCart={handleAddProductToCart}
+                onDeleteProduct = {handleDeleteProductFromCart}
+
               />
             }
           />
@@ -35,6 +41,7 @@ const PageRoutes = () => {
               <ShopPage
                 cartProducts={cartState}
                 onAddToCart={handleAddProductToCart}
+                onDeleteProduct={handleDeleteProductFromCart}
               />
             }
             path="/shop"

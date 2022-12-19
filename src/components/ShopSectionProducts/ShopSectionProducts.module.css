@@ -1,5 +1,17 @@
+
+.section-products {
+    margin-bottom: 4.8rem;
+}
 .product-container {
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 4.8rem;
+}
+
+@media (min-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 4.8rem;
+        row-gap: 2.4rem;
+    }
 }

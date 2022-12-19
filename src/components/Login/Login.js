@@ -1,5 +1,6 @@
 import React from "react";
 
+
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import {
@@ -13,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-
+import styles from "./Login.module.css";
 const Login = () => {
   const [user, loading] = useAuthState(auth);
   // sign in with google
@@ -26,7 +27,7 @@ const Login = () => {
       console.log(result);
       navigate("/");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -39,7 +40,7 @@ const Login = () => {
 
       navigate("/");
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
@@ -52,27 +53,30 @@ const Login = () => {
   }, [user]);
 
   return (
-    <div className="shadow-xl mt-32 p-10 text-gray-700 rounded-lg">
-      <h2 className="text-3xl font-medium">Join Today</h2>
-      <div className="py-4">
-        <h3 className="py-4">Sign in with one of the providers</h3>
+    <>
+      <div className={styles["container-login"]}>
+        <h2 className={styles["heading"]}>Join Today</h2>
+        <div className={styles['heading-subtitle']}>
+          <h3>Sign in with one of the providers</h3>
+        </div>
+        <div className={styles['buttons-login']}>
+          <button
+            className={styles["btn-login"]}
+            onClick={GoogleLogin}
+          >
+            <FcGoogle className={styles["icon"]} /> Sign in with Google
+          </button>
+          <button
+            className={styles['btn-login']}
+            onClick={Facebooklogin}
+          >
+            <AiFillFacebook className={`${styles["icon"]} ${styles['icon-facebook']}`} /> Sign in with
+            Facebook
+          </button>
+        </div>
       </div>
-      <div className="flex flex-col gap-4">
-        <button
-          className="text-white bg-gray-700 p-4 w-full font-medium rounded-lg flex align-middle gap-2"
-          onClick={GoogleLogin}
-        >
-          <FcGoogle className="text-2xl" /> Sign in with Google
-        </button>
-        <button
-          className="text-white bg-gray-700 p-4 w-full font-medium rounded-lg flex align-middle gap-2"
-          onClick={Facebooklogin}
-        >
-          <AiFillFacebook className="text-2xl text-blue-600" /> Sign in with
-          Facebook
-        </button>
-      </div>
-    </div>
+
+    </>
   );
 };
 
